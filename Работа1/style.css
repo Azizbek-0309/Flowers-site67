@@ -1,0 +1,306 @@
+/* Silliq animatsiyalar (Keyframes) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Umumiy stillar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fcf8f6;
+    color: #333;
+    overflow-x: hidden; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sayt tepasi (Header) */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d4a373;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav a:hover {
+    color: #d4a373;
+    transform: translateY(-2px);
+}
+
+/* Asosiy banner */
+.hero {
+    background: linear-gradient(135deg, #2c3e50, #bdc3c7); 
+    height: 50vh;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content {
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-content h1 {
+    font-size: clamp(26px, 4.5vw, 44px);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: clamp(14px, 2vw, 18px);
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #e07a5f;
+    color: white;
+    padding: 12px 35px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(224, 122, 95, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #f4a261;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(244, 162, 97, 0.6);
+}
+
+/* Bo'limlar uchun umumiy padding */
+.products, .reviews {
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(22px, 3.5vw, 32px);
+    margin-bottom: 40px;
+    color: #3d342e;
+}
+
+/* Moslashuvchan setka (GRID) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Guldasta kartochkasi */
+.product-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* Rasmlar konteyneri */
+.product-image-wrapper {
+    height: 220px;
+    overflow: hidden;
+    background: #eaeaea; /* Rasm yuklanguncha kulrang fon */
+}
+
+/* Rasmlarning o'zi (Тег img) */
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rasmni cho'zmasdan proporsiya bilan qirqadi */
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.1); /* Hover bo'lganda rasm yaqinlashadi */
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 15px 10px 8px;
+    color: #3d342e;
+}
+
+/* Maxsulot tavsifi stili */
+.description {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.4;
+    margin: 5px 15px 12px;
+    min-height: 36px; 
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e07a5f;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    background-color: transparent;
+    border: 2px solid #e07a5f;
+    color: #e07a5f;
+    padding: 8px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-buy:hover {
+    background-color: #e07a5f;
+    color: white;
+}
+
+/* --- KOMENTARIYALAR (REVIEWS) STILI --- */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.review-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    text-align: center;
+    border: 1px solid #f0e6e1;
+}
+
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    background: #d4a373;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+.review-card h3 {
+    font-size: 16px;
+    color: #3d342e;
+    margin-bottom: 5px;
+}
+
+.stars {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* Sayt pastki qismi */
+.footer {
+    background-color: #3d342e;
+    color: #fcf8f6;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* Telefonlar uchun moslashuvchanlik */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav {
+        justify-content: center;
+        width: 100%;
+    }
+    .hero {
+        height: 45vh;
+    }
+    .product-grid, .reviews-grid {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+}
